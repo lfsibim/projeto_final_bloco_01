@@ -84,7 +84,7 @@ public abstract class Roupa {
 		System.out.println("Marca: " + this.marca);
 		System.out.println("Tamanho: " + this.tamanho);
 		System.out.println("Cor: " + this.cor);
-		System.out.println("Valor: " + this.valor);
+		System.out.println("Valor: R$ " + this.valor);
 		
 	}
 }

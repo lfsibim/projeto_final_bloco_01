@@ -2,12 +2,22 @@ package brecho;
 
 import java.util.Scanner;
 
+import brecho.model.Calca;
+import brecho.model.Camiseta;
+
 public class Menu {
 
 	public static void main(String[] args) {
 		
 		Scanner in = new Scanner(System.in);
 		int op;
+		
+		//testando
+		
+		Camiseta c1 = new Camiseta("Nike", "M", "Branca", 1, 1, 150.0d, "Longa");
+		c1.visualizar();
+		Calca c2 = new Calca("Adidas", "GG", "Cinza", 2, 2, 120.0d, "Skinny");
+		c2.visualizar();
 		
 		while (true) {
 			

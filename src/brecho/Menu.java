@@ -132,8 +132,6 @@ public class Menu {
 					System.out.println("A roupa não foi encontrada.");
 				}
 				
-				
-				
 				keyPress();
 				break;
 			case 5:

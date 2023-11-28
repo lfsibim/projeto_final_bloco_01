@@ -7,6 +7,7 @@ import java.util.Scanner;
 import brecho.controller.RoupaController;
 import brecho.model.Calca;
 import brecho.model.Camiseta;
+import brecho.util.Cores;
 
 public class Menu {
 
@@ -21,7 +22,7 @@ public class Menu {
 		
 		while (true) {
 			
-			System.out.println("*****************************************************");
+			System.out.println(Cores.TEXT_YELLOW_BOLD_BRIGHT + Cores.ANSI_BLACK_BACKGROUND + "*****************************************************");
 			System.out.println("*                                                   *");
 			System.out.println("*                 BRECHÓ DO LUIS                    *");
 			System.out.println("*                                                   *");
@@ -36,7 +37,7 @@ public class Menu {
 			System.out.println("*                                                   *");
 			System.out.println("*****************************************************");
 			System.out.println(" Entre com a opção desejada:                         ");
-			System.out.println("                                                     ");
+			System.out.println("                                                     " + Cores.TEXT_RESET);
 			
 			try {
 				op = in.nextInt();
@@ -84,12 +85,12 @@ public class Menu {
 				keyPress();
 				break;
 			case 2:
-				System.out.println("Listar todas as Roupas\n\n");
+				System.out.println(Cores.TEXT_YELLOW_BOLD_BRIGHT + Cores.ANSI_BLACK_BACKGROUND + "Listar todas as Roupas\n\n");
 				roupas.listarProdutos();
 				keyPress();
 				break;
 			case 3:
-				System.out.println("Buscar Roupa por ID\n\n");
+				System.out.println(Cores.TEXT_YELLOW_BOLD_BRIGHT + Cores.ANSI_BLACK_BACKGROUND + "Buscar Roupa por ID\n\n");
 				System.out.println("Digite o ID da Roupa: ");
 				id = in.nextInt();
 				roupas.buscarProdutoPorId(id);
@@ -114,19 +115,19 @@ public class Menu {
 					valor = in.nextDouble();
 					
 					switch(tipo) {
-					case 1 -> {
-						System.out.println("Digite o tipo da manga da camiseta: ");
-						manga = in.next();
-						roupas.cadastrarProduto(new Camiseta(marca, tamanho, cor, tipo, roupas.gerarId(), valor, manga));
-					}
-					case 2 -> {
-						System.out.println("Digite o tipo da barra da calça: ");
-						barra = in.next();
-						roupas.cadastrarProduto(new Calca(marca, tamanho, cor, tipo, roupas.gerarId(), valor, barra));
-					}
-					default -> {
-						System.out.println("Tipo de roupa inválido.");
-					}
+						case 1 -> {
+							System.out.println("Digite o tipo da manga da camiseta: ");
+							manga = in.next();
+							roupas.atualizarProduto(new Camiseta(marca, tamanho, cor, tipo, id, valor, manga));
+						}
+						case 2 -> {
+							System.out.println("Digite o tipo da barra da calça: ");
+							barra = in.next();
+							roupas.atualizarProduto(new Calca(marca, tamanho, cor, tipo, id, valor, barra));
+						}
+						default -> {
+							System.out.println("Tipo de roupa inválido.");
+						}
 					}
 				}else {
 					System.out.println("A roupa não foi encontrada.");
@@ -150,9 +151,9 @@ public class Menu {
 	}
 	
 		public static void sobre() {
-			System.out.println("\n*********************************************************");
+			System.out.println(Cores.TEXT_YELLOW_BOLD_BRIGHT + Cores.ANSI_BLACK_BACKGROUND + "\n*****************************************************");
 			System.out.println(" LFSystems - Obrigado por utilizar!");
-			System.out.println("*********************************************************");
+			System.out.println("*****************************************************");
 	}
 		
 		public static void keyPress() {

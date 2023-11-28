@@ -34,7 +34,7 @@ public class RoupaController implements RoupaRepository {
 	}
 
 	@Override
-	public void atualizarProduto(int id, Roupa roupa) {
+	public void atualizarProduto(Roupa roupa) {
 		var buscarRoupa = buscarNaCollection(roupa.getId());
 		if(buscarRoupa != null) {
 			listaRoupas.set(listaRoupas.indexOf(buscarRoupa), roupa);

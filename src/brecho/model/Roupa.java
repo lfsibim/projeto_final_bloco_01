@@ -80,6 +80,7 @@ public abstract class Roupa {
 		System.out.println("\n***********************");
 		System.out.println("Informações da Roupa:");
 		System.out.println("***********************");
+		System.out.println("ID: " + this.id);
 		System.out.println("Tipo: " + tipo);
 		System.out.println("Marca: " + this.marca);
 		System.out.println("Tamanho: " + this.tamanho);

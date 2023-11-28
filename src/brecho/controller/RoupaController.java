@@ -29,7 +29,7 @@ public class RoupaController implements RoupaRepository {
 		if(roupa != null) {
 			roupa.visualizar();
 		}else {
-			System.out.println("\nA Roupa não foi encontrada. Vefique o ID informado");
+			System.out.println("\nA Roupa não foi encontrada. Verifique o ID informado");
 		}
 	}
 
